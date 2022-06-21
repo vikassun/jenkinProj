@@ -9,14 +9,23 @@ pipeline {
 						bat "git clone https://github.com/vikassun/jenkinProj.git"
 						}
 					}
-				stage ("test"){
+				stage ("install"){
 					steps{
 						echo 'testing the application...'
+						bat "mvn install -f jenkinProj"
 						}
 					}
-				stage ("deploy"){
+				stage ("test"){
 					steps{
 						echo 'deploying the application...'
+						bat "mvn test -f jenkinProj"
+						}
+					}
+				}
+				stage ("package"){
+					steps{
+						echo 'deploying the application...'
+						bat "mvn package -f jenkinProj"
 						}
 					}
 				}
