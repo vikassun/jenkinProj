@@ -21,12 +21,13 @@ pipeline {
 						bat "mvn test -f jenkinProj"
 						}
 					}
-				}
 				stage ("package"){
 					steps{
 						echo 'deploying the application...'
 						bat "mvn package -f jenkinProj"
 						}
 					}
+				}
+				
 			}
 		
