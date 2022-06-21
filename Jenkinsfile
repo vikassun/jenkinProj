@@ -2,9 +2,11 @@ pipeline {
 		agent any
 
 		stages {
-				stage ("build"){
+				stage ('git repo & clean'){
 					steps{
 						echo 'building the application...'
+						bat "rmdir /s /q jenkinProj"
+						bat "git clone https://github.com/vikassun/jenkinProj.git"
 						}
 					}
 				stage ("test"){
