@@ -28,5 +28,5 @@ pipeline {
 						bat "mvn package -f jenkinProj"
 						}
 					}
-				}
-		}
+			}
+		
